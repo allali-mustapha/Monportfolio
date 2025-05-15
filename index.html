@@ -766,6 +766,18 @@
     <script src="js/scrollax.min.js"></script>
 
     <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Listen for clicks on the entire document
+            $(document).on('click', function (event) {
+                // Check if the navbar is open and the click is outside the navbar
+                if ($('#ftco-nav').hasClass('show') && !$(event.target).closest('#ftco-nav, .navbar-toggler').length) {
+                    // Collapse the navbar
+                    $('#ftco-nav').collapse('hide');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
